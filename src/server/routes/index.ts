@@ -15,6 +15,8 @@ router.get('/teste', (req, res) => {
 
 router.post('/cliente/pessoaFisica', clientsFisicoControllers.createValidation, clientsFisicoControllers.create);
 router.post('/cliente/pessoaJuridica', clientsJuridicoControllers.createValidation, clientsJuridicoControllers.create);
+router.get('/cliente/pessoaFisica/:id', clientsFisicoControllers.GetByIdValidator, clientsFisicoControllers.GetById);
+router.get('/cliente/pessoaJuridica/:id', clientsJuridicoControllers.GetByIdValidator, clientsJuridicoControllers.GetById);
 
 
 
