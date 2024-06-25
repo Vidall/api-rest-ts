@@ -1,6 +1,6 @@
-import * as createPessoaFisica from './CreatePessoaFisica';
+import * as create from './Create';
 
 
 export const clientsFisicoControllers = {
-  ...createPessoaFisica
+  ...create
 };

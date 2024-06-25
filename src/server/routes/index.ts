@@ -13,8 +13,8 @@ router.get('/teste', (req, res) => {
   return res.status(StatusCodes.CREATED).send('Primeiro teste');
 });
 
-router.post('/cliente/pessoaFisica', clientsFisicoControllers.createValidationPessoaFisica, clientsFisicoControllers.createPessoaFisica);
-router.post('/cliente/pessoaJuridica', clientsJuridicoControllers.createValidationPessoaJuridica, clientsJuridicoControllers.createPessoaJuridica);
+router.post('/cliente/pessoaFisica', clientsFisicoControllers.createValidation, clientsFisicoControllers.create);
+router.post('/cliente/pessoaJuridica', clientsJuridicoControllers.createValidation, clientsJuridicoControllers.create);
 
 
 

@@ -1,6 +1,6 @@
-import * as createPessoaJuridica from './CreatePessoaJuridica';
+import * as create from './Create';
 
 
 export const clientsJuridicoControllers = {
-  ...createPessoaJuridica,
+  ...create,
 };

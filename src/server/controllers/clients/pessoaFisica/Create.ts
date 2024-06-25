@@ -21,14 +21,14 @@ const bodySchema = yup.object().shape({
 });
 
 
-export const createValidationPessoaFisica = validation((getSchema) => ({
+export const createValidation = validation((getSchema) => ({
   body: getSchema<IPessoaFisica>(bodySchema)
 }));
 
 
 
 
-export const createPessoaFisica = async (req: Request, res: Response) => {
+export const create = async (req: Request, res: Response) => {
   console.log(req.body);
 
   return res.status(statusCodes.INTERNAL_SERVER_ERROR).send('Ainda não implementado');
