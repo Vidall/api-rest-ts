@@ -4,20 +4,7 @@ import { cpf } from 'cpf-cnpj-validator';
 
 import statusCodes from 'http-status-codes';
 import { validation } from '../../../shared/middlewares/validation';
-
-interface Endereco {
-  rua: string,
-  numero: number,
-  bairro: string,
-  cidade: string,
-}
-
-interface IBodyProps{
-  nome: string,
-  endereco: Endereco,
-  cpf: string,
-  tipo: 'fisico'
-}
+import {IPessoaFisica} from '../../../database/models';
 
 const enderecoSchema = yup.object().shape({
   rua: yup.string().required(),
@@ -35,7 +22,7 @@ const bodySchema = yup.object().shape({
 
 
 export const createValidationPessoaFisica = validation((getSchema) => ({
-  body: getSchema<IBodyProps>(bodySchema)
+  body: getSchema<IPessoaFisica>(bodySchema)
 }));
 
 
