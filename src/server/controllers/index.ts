@@ -1,1 +1,2 @@
-export * from './clients';
+export * from './clients/pessoaFisica';
+export * from './clients/pessoaJuridica';

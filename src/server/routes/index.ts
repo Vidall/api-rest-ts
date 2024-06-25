@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-import { clientsControllers } from '../controllers';
+import { clientsFisicoControllers, clientsJuridicoControllers } from '../controllers';
 
 const router = Router();
 
@@ -13,8 +13,8 @@ router.get('/teste', (req, res) => {
   return res.status(StatusCodes.CREATED).send('Primeiro teste');
 });
 
-router.post('/cliente/pessoaFisica', clientsControllers.createValidationPessoaFisica, clientsControllers.createPessoaFisica);
-router.post('/cliente/pessoaJuridica', clientsControllers.createValidationPessoaJuridica, clientsControllers.createPessoaJuridica);
+router.post('/cliente/pessoaFisica', clientsFisicoControllers.createValidationPessoaFisica, clientsFisicoControllers.createPessoaFisica);
+router.post('/cliente/pessoaJuridica', clientsJuridicoControllers.createValidationPessoaJuridica, clientsJuridicoControllers.createPessoaJuridica);
 
 
 
