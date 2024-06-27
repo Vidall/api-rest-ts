@@ -13,10 +13,14 @@ router.get('/teste', (req, res) => {
   return res.status(StatusCodes.CREATED).send('Primeiro teste');
 });
 
-router.post('/cliente/pessoaFisica', clientsFisicoControllers.createValidation, clientsFisicoControllers.create);
-router.post('/cliente/pessoaJuridica', clientsJuridicoControllers.createValidation, clientsJuridicoControllers.create);
-router.get('/cliente/pessoaFisica/:id', clientsFisicoControllers.GetByIdValidator, clientsFisicoControllers.GetById);
-router.get('/cliente/pessoaJuridica/:id', clientsJuridicoControllers.GetByIdValidator, clientsJuridicoControllers.GetById);
+//Pessoa fisica
+router.post('/clientes/pessoaFisica', clientsFisicoControllers.createValidation, clientsFisicoControllers.create);
+router.get('/clientes/pessoaFisica/:id', clientsFisicoControllers.GetByIdValidator, clientsFisicoControllers.GetById);
+router.get('/clientes/pessoaFisica', clientsFisicoControllers.getAll, clientsFisicoControllers.getAll);
+
+//Pessoa juridica
+router.get('/clientes/pessoaJuridica/:id', clientsJuridicoControllers.GetByIdValidator, clientsJuridicoControllers.GetById);
+router.post('/clientes/pessoaJuridica', clientsJuridicoControllers.createValidation, clientsJuridicoControllers.create);
 
 
 

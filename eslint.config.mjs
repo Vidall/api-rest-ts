@@ -2,7 +2,6 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
-
 export default [
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
@@ -13,7 +12,10 @@ export default [
       'no-undef': 'error',
       'indent': [
         'error',
-        2
+        2,
+        {
+          'SwitchCase': 1
+        }
       ],
       'linebreak-style': [
         'error',
@@ -27,6 +29,12 @@ export default [
         'error',
         'always'
       ],
+      '@typescript-eslint/ban-types': 'off',
+      'no-multiple-empty-lines': [
+        'error',
+        { max: 1, maxEOF: 1, maxBOF: 0 }
+      ]
+
     }
-  }
+  },
 ];

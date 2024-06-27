@@ -20,13 +20,9 @@ const bodySchema = yup.object().shape({
   tipo: yup.string().oneOf(['fisico']).required()
 });
 
-
 export const createValidation = validation((getSchema) => ({
   body: getSchema<IPessoaFisica>(bodySchema)
 }));
-
-
-
 
 export const create = async (req: Request, res: Response) => {
   console.log(req.body);
